@@ -680,8 +680,8 @@ int main(int argc, char *argv[])
     /// 7a. parse shroudnode.conf
     std::string strErr;
     if(!shroudnodeConfig.read(strErr)) {
-        QMessageBox::critical(0, QObject::tr("Shroud Core"),
-                              QObject::tr("Error reading shroudnode configuration file: %1").arg(strErr.c_str()));
+        QMessageBox::critical(0, QObject::tr("ShroudX Core"),
+                              QObject::tr("Error reading shroudxnode configuration file: %1").arg(strErr.c_str()));
         return EXIT_FAILURE;
     }
 

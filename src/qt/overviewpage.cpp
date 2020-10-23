@@ -235,10 +235,10 @@ void OverviewPage::handleEnabledTorChanged(){
 
 	if(ui->checkboxEnabledTor->isChecked()){
         settings.setValue("fTorSetup", true);
-        msgBox.setText("Please restart the Shroud wallet to route your connection through Tor to protect your IP address. \nSyncing your wallet might be slower with TOR. \nNote that -torsetup in shroud.conf will always override any changes made here.");
+        msgBox.setText("Please restart the ShroudX wallet to route your connection through Tor to protect your IP address. \nSyncing your wallet might be slower with TOR. \nNote that -torsetup in shroud.conf will always override any changes made here.");
 	}else{
         settings.setValue("fTorSetup", false);
-        msgBox.setText("Please restart the Shroud wallet to disable routing of your connection through Tor to protect your IP address. \nNote that -torsetup in shroud.conf will always override any changes made here.");
+        msgBox.setText("Please restart the ShroudX wallet to disable routing of your connection through Tor to protect your IP address. \nNote that -torsetup in shroud.conf will always override any changes made here.");
 	}
 	msgBox.exec();
 }

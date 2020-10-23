@@ -315,7 +315,7 @@ void BitcoinGUI::createActions()
 	tabGroup->addAction(overviewAction);
 
 	sendCoinsAction = new QAction(platformStyle->MultiStatesIcon(":/icons/send"), tr("&Send"), this);
-	sendCoinsAction->setStatusTip(tr("Send coins to a Shroud address"));
+	sendCoinsAction->setStatusTip(tr("Send coins to a ShroudX address"));
 	sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
 	sendCoinsAction->setCheckable(true);
 	sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + key++));
@@ -326,7 +326,7 @@ void BitcoinGUI::createActions()
 	sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
 	receiveCoinsAction = new QAction(platformStyle->MultiStatesIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
-	receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and shroud: URIs)"));
+	receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and shroudx: URIs)"));
 	receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
 	receiveCoinsAction->setCheckable(true);
 	receiveCoinsAction->setShortcut(QKeySequence(Qt::ALT + key++));
@@ -363,7 +363,7 @@ void BitcoinGUI::createActions()
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
     // can be triggered from the tray menu, and need to show the GUI to be useful.
     shroudnodeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/shroudnodes"), tr("&Shroudnodes"), this);
-    shroudnodeAction->setStatusTip(tr("Browse Shroudnodes"));
+    shroudnodeAction->setStatusTip(tr("Browse ShroudXnodes"));
     shroudnodeAction->setToolTip(shroudnodeAction->statusTip());
     shroudnodeAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -454,9 +454,9 @@ void BitcoinGUI::createActions()
     changePassphraseAction = new QAction(platformStyle->SingleColorIcon(":/icons/key"), tr("&Change Passphrase..."), this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
     signMessageAction = new QAction(platformStyle->SingleColorIcon(":/icons/edit"), tr("Sign &message..."), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your Shroud addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your ShroudX addresses to prove you own them"));
     verifyMessageAction = new QAction(platformStyle->SingleColorIcon(":/icons/verify"), tr("&Verify message..."), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Shroud addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified ShroudX addresses"));
 
     openRepairAction = new QAction(QIcon(":/icons/options"), tr("Wallet &Repair"), this);
     openRepairAction->setStatusTip(tr("Show wallet repair options"));
@@ -473,7 +473,7 @@ void BitcoinGUI::createActions()
     usedReceivingAddressesAction->setStatusTip(tr("Show the list of used receiving addresses and labels"));
 
     openAction = new QAction(platformStyle->SingleColorIcon(":/icons/open"), tr("Open &URI..."), this);
-    openAction->setStatusTip(tr("Open a shroud: URI or payment request"));
+    openAction->setStatusTip(tr("Open a shroudx: URI or payment request"));
 
     showHelpMessageAction = new QAction(platformStyle->SingleColorIcon(":/icons/info"), tr("&Command-line options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
@@ -924,7 +924,7 @@ void BitcoinGUI::setNumConnections(int count)
     if(progressBarLabel->text() == "No block source available..." && count > 1){
         progressBarLabel->setText("Waiting for new block...");
     }
-    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to Shroud network", "", count));
+    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to ShroudX network", "", count));
 }
 
 void BitcoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVerificationProgress, bool header)
@@ -1092,7 +1092,7 @@ void BitcoinGUI::setAdditionalDataSyncProgress(int count, double nSyncProgress)
 
 void BitcoinGUI::message(const QString &title, const QString &message, unsigned int style, bool *ret)
 {
-    QString strTitle = tr("Shroud"); // default title
+    QString strTitle = tr("ShroudX"); // default title
     // Default to information icon
     int nMBoxIcon = QMessageBox::Information;
     int nNotifyIcon = Notificator::Information;

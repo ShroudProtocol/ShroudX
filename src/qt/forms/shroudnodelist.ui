@@ -51,7 +51,7 @@
        </property>
        <widget class="QWidget" name="tabMyShroudnodes">
         <attribute name="title">
-         <string>My Shroudnodes</string>
+         <string>My ShroudXnodes</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="0" column="0">
@@ -67,7 +67,7 @@
              <item>
               <widget class="QLabel" name="updateNote">
                <property name="text">
-                <string>Note: Status of your shroudnodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your shroudnode should be running but you still do not see &quot;ENABLED&quot; in &quot;Status&quot; field.</string>
+                <string>Note: Status of your shroudxnodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your shroudxnode should be running but you still do not see &quot;ENABLED&quot; in &quot;Status&quot; field.</string>
                </property>
               </widget>
              </item>
@@ -204,7 +204,7 @@
        </widget>
        <widget class="QWidget" name="tabAllShroudnodes">
         <attribute name="title">
-         <string>All Shroudnodes</string>
+         <string>All ShroudXnodes</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout">
          <item row="1" column="0">
@@ -271,7 +271,7 @@
            <item>
             <widget class="QLineEdit" name="filterLineEdit">
              <property name="toolTip">
-              <string>Filter shroudnode list</string>
+              <string>Filter shroudxnode list</string>
              </property>
             </widget>
            </item>

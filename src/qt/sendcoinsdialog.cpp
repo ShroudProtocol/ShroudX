@@ -731,7 +731,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString& text)
         }
         else if (!addr.IsValid()) // Invalid address
         {
-            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Shroud address"));
+            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid ShroudX address"));
         }
         else // Valid address
         {

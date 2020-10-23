@@ -69,7 +69,7 @@ public Q_SLOTS:
     void gotoHistoryPage();
     /** Switch directory to bitcoin tx history tab */
     void gotoBitcoinHistoryTab();
-    /** Switch to shroudnode page */
+    /** Switch to shroudxnode page */
     void gotoShroudnodePage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();

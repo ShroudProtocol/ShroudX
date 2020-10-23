@@ -153,7 +153,7 @@ void WalletView::setupTransactionPage()
         elysiumTransactionsView = new TXHistoryDialog();
 
         transactionTabs = new QTabWidget();
-        transactionTabs->addTab(indexTransactionsView, tr("Shroud"));
+        transactionTabs->addTab(indexTransactionsView, tr("ShroudX"));
         transactionTabs->addTab(elysiumTransactionsView, tr("Elysium"));
     }
 #endif
@@ -183,7 +183,7 @@ void WalletView::setupSendCoinPage()
         sendElysiumView = new SendMPDialog(platformStyle);
 
         sendCoinsTabs = new QTabWidget();
-        sendCoinsTabs->addTab(sendZcoinView, tr("Shroud"));
+        sendCoinsTabs->addTab(sendZcoinView, tr("ShroudX"));
         sendCoinsTabs->addTab(sendElysiumView, tr("Elysium"));
     }
 #endif

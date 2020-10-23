@@ -395,7 +395,7 @@ QString TransactionTableModel::formatTxType(const TransactionRecord *wtx) const
     case TransactionRecord::Stake:
            return tr("Stake");
     case TransactionRecord::INReward:
-            return tr("Shroudnode Reward");
+            return tr("ShroudXnode Reward");
     default:
         return QString();
     }

@@ -9,7 +9,7 @@
 #define UNUSED
 #endif
 static const char UNUSED *bitcoin_strings[] = {
-QT_TRANSLATE_NOOP("shroud-core", "Shroud Core"),
+QT_TRANSLATE_NOOP("shroud-core", "ShroudX Core"),
 QT_TRANSLATE_NOOP("shroud-core", "The %s developers"),
 QT_TRANSLATE_NOOP("shroud-core", ""
 "(1 = keep tx meta data e.g. account owner and payment request information, 2 "
@@ -52,7 +52,7 @@ QT_TRANSLATE_NOOP("shroud-core", ""
 "\n"
 "Exodus requires an enabled transaction index. To enable transaction "
 "indexing, please use the \"-txindex\" option as command line argument or add "
-"\"txshroud=1\" to your client configuration file within your data directory.\n"
+"\"txindex=1\" to your client configuration file within your data directory.\n"
 "\n"
 "Configuration file"),
 QT_TRANSLATE_NOOP("shroud-core", ""
@@ -150,11 +150,11 @@ QT_TRANSLATE_NOOP("shroud-core", ""
 QT_TRANSLATE_NOOP("shroud-core", ""
 "Output debugging information (default: %u, supplying <category> is optional)"),
 QT_TRANSLATE_NOOP("shroud-core", ""
-"Please add txshroud=1 to your configuration file manually.\n"
+"Please add txindex=1 to your configuration file manually.\n"
 "\n"
 "Exodus will now shutdown."),
 QT_TRANSLATE_NOOP("shroud-core", ""
-"Please add txshroud=1 to your configuration file manually.\n"
+"Please add txindex=1 to your configuration file manually.\n"
 "\n"
 "Omni Core will now shutdown."),
 QT_TRANSLATE_NOOP("shroud-core", ""
@@ -338,7 +338,7 @@ QT_TRANSLATE_NOOP("shroud-core", "Bad change address"),
 QT_TRANSLATE_NOOP("shroud-core", "Block creation options:"),
 QT_TRANSLATE_NOOP("shroud-core", "Block index is outdated, reindex required\n"),
 QT_TRANSLATE_NOOP("shroud-core", "Can not choose coins within limit."),
-QT_TRANSLATE_NOOP("shroud-core", "Can't find random Shroudnode."),
+QT_TRANSLATE_NOOP("shroud-core", "Can't find random ShroudXnode."),
 QT_TRANSLATE_NOOP("shroud-core", "Can't mix while sync in progress."),
 QT_TRANSLATE_NOOP("shroud-core", "Can't mix: no compatible inputs found!"),
 QT_TRANSLATE_NOOP("shroud-core", "Cannot downgrade wallet"),
@@ -365,7 +365,7 @@ QT_TRANSLATE_NOOP("shroud-core", "Enable publish raw block in <address>"),
 QT_TRANSLATE_NOOP("shroud-core", "Enable publish raw transaction in <address>"),
 QT_TRANSLATE_NOOP("shroud-core", "Enable transaction replacement in the memory pool (default: %u)"),
 QT_TRANSLATE_NOOP("shroud-core", "Entries are full."),
-QT_TRANSLATE_NOOP("shroud-core", "Error connecting to Shroudnode."),
+QT_TRANSLATE_NOOP("shroud-core", "Error connecting to ShroudXnode."),
 QT_TRANSLATE_NOOP("shroud-core", "Error initializing block database"),
 QT_TRANSLATE_NOOP("shroud-core", "Error initializing wallet database environment %s!"),
 QT_TRANSLATE_NOOP("shroud-core", "Error loading %s"),
@@ -397,9 +397,9 @@ QT_TRANSLATE_NOOP("shroud-core", "Include IP addresses in debug output (default:
 QT_TRANSLATE_NOOP("shroud-core", "Incompatible mode."),
 QT_TRANSLATE_NOOP("shroud-core", "Incompatible version."),
 QT_TRANSLATE_NOOP("shroud-core", "Incorrect or no genesis block found. Wrong datadir for network?"),
-QT_TRANSLATE_NOOP("shroud-core", "Shroudnode cache is empty, skipping payments cache..."),
-QT_TRANSLATE_NOOP("shroud-core", "Shroudnode queue is full."),
-QT_TRANSLATE_NOOP("shroud-core", "Shroudnode:"),
+QT_TRANSLATE_NOOP("shroud-core", "ShroudXnode cache is empty, skipping payments cache..."),
+QT_TRANSLATE_NOOP("shroud-core", "ShroudXnode queue is full."),
+QT_TRANSLATE_NOOP("shroud-core", "ShroudXnode:"),
 QT_TRANSLATE_NOOP("shroud-core", "Information"),
 QT_TRANSLATE_NOOP("shroud-core", "Initialization sanity check failed. %s is shutting down."),
 QT_TRANSLATE_NOOP("shroud-core", "Input is not valid."),
@@ -407,7 +407,7 @@ QT_TRANSLATE_NOOP("shroud-core", "Insufficient funds"),
 QT_TRANSLATE_NOOP("shroud-core", "Insufficient funds."),
 QT_TRANSLATE_NOOP("shroud-core", "Invalid -onion address: '%s'"),
 QT_TRANSLATE_NOOP("shroud-core", "Invalid -proxy address: '%s'"),
-QT_TRANSLATE_NOOP("shroud-core", "Invalid Shroud address"),
+QT_TRANSLATE_NOOP("shroud-core", "Invalid ShroudX address"),
 QT_TRANSLATE_NOOP("shroud-core", "Invalid amount for -%s=<amount>: '%s'"),
 QT_TRANSLATE_NOOP("shroud-core", "Invalid amount for -fallbackfee=<amount>: '%s'"),
 QT_TRANSLATE_NOOP("shroud-core", "Invalid amount for -mininput=<amount>: '%s'"),
@@ -441,8 +441,8 @@ QT_TRANSLATE_NOOP("shroud-core", "Maximum per-connection send buffer, <n>*1000 b
 QT_TRANSLATE_NOOP("shroud-core", "Missing input transaction information."),
 QT_TRANSLATE_NOOP("shroud-core", "Mixing in progress..."),
 QT_TRANSLATE_NOOP("shroud-core", "Need to specify a port with -whitebind: '%s'"),
-QT_TRANSLATE_NOOP("shroud-core", "No Shroudnodes detected."),
-QT_TRANSLATE_NOOP("shroud-core", "No compatible Shroudnode found."),
+QT_TRANSLATE_NOOP("shroud-core", "No ShroudXnodes detected."),
+QT_TRANSLATE_NOOP("shroud-core", "No compatible ShroudXnode found."),
 QT_TRANSLATE_NOOP("shroud-core", "No errors detected."),
 QT_TRANSLATE_NOOP("shroud-core", "No matching denominations found for mixing."),
 QT_TRANSLATE_NOOP("shroud-core", "No recipients"),
@@ -451,7 +451,7 @@ QT_TRANSLATE_NOOP("shroud-core", "Non-standard public key detected."),
 QT_TRANSLATE_NOOP("shroud-core", "Not compatible with existing transactions."),
 QT_TRANSLATE_NOOP("shroud-core", "Not enough file descriptors available."),
 QT_TRANSLATE_NOOP("shroud-core", "Not enough funds to anonymize."),
-QT_TRANSLATE_NOOP("shroud-core", "Not in the Shroudnode list."),
+QT_TRANSLATE_NOOP("shroud-core", "Not in the ShroudXnode list."),
 QT_TRANSLATE_NOOP("shroud-core", "One of minted coin does not found in the chain"),
 QT_TRANSLATE_NOOP("shroud-core", "One of the minted coin is invalid"),
 QT_TRANSLATE_NOOP("shroud-core", "Only connect to nodes in network <net> (ipv4, ipv6 or onion)"),
@@ -518,7 +518,7 @@ QT_TRANSLATE_NOOP("shroud-core", "The source code is available from %s."),
 QT_TRANSLATE_NOOP("shroud-core", "The spend coin transaction failed to verify"),
 QT_TRANSLATE_NOOP("shroud-core", "The transaction amount is too small to pay the fee"),
 QT_TRANSLATE_NOOP("shroud-core", "This is experimental software."),
-QT_TRANSLATE_NOOP("shroud-core", "This is not a Shroudnode."),
+QT_TRANSLATE_NOOP("shroud-core", "This is not a ShroudXnode."),
 QT_TRANSLATE_NOOP("shroud-core", "Threshold for disconnecting misbehaving peers (default: %u)"),
 QT_TRANSLATE_NOOP("shroud-core", "Too many %f denominations, removing."),
 QT_TRANSLATE_NOOP("shroud-core", "Tor control port password (default: empty)"),
