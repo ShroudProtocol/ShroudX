@@ -22,12 +22,13 @@ Shroud Protocol (SHROUD) is a new state of the art privacy coin that uses Sigma 
 | Block Time | `60s (1 min)` |
 | Type | `Hybrid PoW/PoS/MN` |
 | Max Supply | `50000000 SHROUD` |
-| Premine Supply | `5000000 SHROUD` |
+| Premine | `5000000 SHROUD` |
+| Premine Burned | `4724447 SHROUD` |
 | Coinbase Maturity | `100 Blocks` |
 | Stake Maturity | `100 MIN` |
 | Masternode Maturity | `100 MIN` |
 | Masternode Confirmations | `15` |
-| Masternode Collateral | `10000 SHROUD` |
+| Masternode Collateral | `50000 SHROUD` |
 | Default Port | `42998` |
 | RPC Port | `42999` |
 
@@ -39,6 +40,7 @@ Shroud Protocol (SHROUD) is a new state of the art privacy coin that uses Sigma 
 | INITIAL | `0.0001` | `100 %` | `0%` | `0%` | `3 - 1500` |
 | POSPREPARATION | `1` | `100 %` | `0%` | `0%` | `1501 - 10080` |
 | YEAR1 | `5` | `15 %` | `15%` | `70%` | `10081 - 525600` |
+| PREMINE BURNED | `4,724,447` | | | | `168100` |
 | YEAR2 | `3` | `15 %` | `15%` | `70%` | `525601 - 1051200` |
 | YEAR3 | `2` | `15 %` | `15%` | `70%` | `1051201 - 1576800` |
 | YEAR4 | `1.75` | `15 %` | `15%` | `70%` | `1576801 - 2102400` |

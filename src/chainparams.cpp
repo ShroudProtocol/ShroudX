@@ -150,6 +150,7 @@ public:
         consensus.nDisableZCoinClientCheckTime = 1591139261; //Date and time (GMT): Tuesday, June 2, 2020 11:07:41 PM
         consensus.nBlacklistEnableHeight = 1;
         consensus.nBlockLimitUpgradeHeight = 1;
+        consensus.mBlockTimeUpgradeHeight = 168100; // Height to enable updates
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
@@ -178,9 +179,9 @@ public:
         //vFixedSeeds.clear();
         //vSeeds.clear();
         //Initial seeders to use
-        vSeeds.push_back(CDNSSeedData("node1.shroudx.eu", "node1.shroudx.eu", false));
-        vSeeds.push_back(CDNSSeedData("node2.shroudx.eu", "node2.shroudx.eu", false));
-        vSeeds.push_back(CDNSSeedData("node3.shroudx.eu", "node3.shroudx.eu", false));
+        vSeeds.push_back(CDNSSeedData("shroudx.eu", "node1.shroudx.eu", false));
+        vSeeds.push_back(CDNSSeedData("shroudx.eu", "node2.shroudx.eu", false));
+        vSeeds.push_back(CDNSSeedData("shroudx.eu", "node3.shroudx.eu", false));
 
         // Single trusted IPs incase of seeder failure / downtime
         vSeeds.push_back(CDNSSeedData("167.86.99.164", "167.86.99.164", false));

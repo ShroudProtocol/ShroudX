@@ -785,8 +785,13 @@ bool CWallet::SelectCoinsForStaking(CAmount& nTargetValue, std::set<std::pair<co
          //We dont allow sigma inputs to stake yet
         if(pcoin->IsSigmaMint())
             continue;
-        if (n == SHROUDNODE_COIN_REQUIRED * COIN)
-            continue;
+        if (chainActive.Height() +1 > Params(CBaseChainParams::MAIN).GetConsensus().mBlockTimeUpgradeHeight) {
+            if (n == SHROUDNODE_COIN_REQUIRED * COIN)
+                continue;
+        } else {
+            if (n == SHROUDNODE_COIN_REQUIRED_OLD * COIN)
+                continue;
+        }
 
         pair<int64_t,pair<const CWalletTx*,unsigned int> > coin = make_pair(n,make_pair(pcoin, i));
 
@@ -3266,13 +3271,25 @@ void CWallet::AvailableCoins(vector <COutput> &vCoins, bool fOnlyConfirmed, cons
                 } else if (nCoinType == ONLY_DENOMINATED) {
                     found = IsDenominatedAmount(pcoin->vout[i].nValue);
                 } else if (nCoinType == ONLY_NOT1000IFMN) {
-                    found = !(fShroudNode && pcoin->vout[i].nValue == SHROUDNODE_COIN_REQUIRED * COIN);
+                    if (chainActive.Height() +1 > Params(CBaseChainParams::MAIN).GetConsensus().mBlockTimeUpgradeHeight) {
+                        found = !(fShroudNode && pcoin->vout[i].nValue == SHROUDNODE_COIN_REQUIRED * COIN);
+                    } else {
+                        found = !(fShroudNode && pcoin->vout[i].nValue == SHROUDNODE_COIN_REQUIRED_OLD * COIN);
+                    }
                 } else if (nCoinType == ONLY_NONDENOMINATED_NOT1000IFMN) {
                     if (IsCollateralAmount(pcoin->vout[i].nValue)) continue; // do not use collateral amounts
                     found = !IsDenominatedAmount(pcoin->vout[i].nValue);
-                    if (found && fShroudNode) found = pcoin->vout[i].nValue != SHROUDNODE_COIN_REQUIRED * COIN; // do not use Hot MN funds
+                    if (chainActive.Height() +1 > Params(CBaseChainParams::MAIN).GetConsensus().mBlockTimeUpgradeHeight) {
+                        if (found && fShroudNode) found = pcoin->vout[i].nValue != SHROUDNODE_COIN_REQUIRED * COIN; // do not use Hot MN funds
+                    } else {
+                        if (found && fShroudNode) found = pcoin->vout[i].nValue != SHROUDNODE_COIN_REQUIRED_OLD * COIN;
+                    }
                 } else if (nCoinType == ONLY_1000) {
-                    found = pcoin->vout[i].nValue == SHROUDNODE_COIN_REQUIRED * COIN;
+                    if (chainActive.Height() +1 > Params(CBaseChainParams::MAIN).GetConsensus().mBlockTimeUpgradeHeight) {
+                        found = pcoin->vout[i].nValue == SHROUDNODE_COIN_REQUIRED * COIN;
+                    } else {
+                        found = pcoin->vout[i].nValue == SHROUDNODE_COIN_REQUIRED_OLD * COIN;
+                    }
                 } else if (nCoinType == ONLY_PRIVATESEND_COLLATERAL) {
                     found = IsCollateralAmount(pcoin->vout[i].nValue);
                 } else {
@@ -3323,7 +3340,11 @@ bool CWallet::SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector 
         if (out.tx->vout[out.i].nValue < nValueMin / 10) continue;
         //do not allow collaterals to be selected
         if (IsCollateralAmount(out.tx->vout[out.i].nValue)) continue;
-        if (fShroudNode && out.tx->vout[out.i].nValue == SHROUDNODE_COIN_REQUIRED * COIN) continue; //shroudnode input
+        if (chainActive.Height() +1 > Params(CBaseChainParams::MAIN).GetConsensus().mBlockTimeUpgradeHeight) {
+            if (fShroudNode && out.tx->vout[out.i].nValue == SHROUDNODE_COIN_REQUIRED * COIN) continue; //shroudnode input
+        } else {
+            if (fShroudNode && out.tx->vout[out.i].nValue == SHROUDNODE_COIN_REQUIRED_OLD * COIN) continue;
+        }
 
         if (nValueRet + out.tx->vout[out.i].nValue <= nValueMax) {
             CTxIn txin = CTxIn(out.tx->GetHash(), out.i);
@@ -4049,7 +4070,11 @@ bool CWallet::SelectCoinsGrouppedByAddresses(std::vector <CompactTallyItem> &vec
             if (fAnonymizable) {
                 // ignore collaterals
                 if (IsCollateralAmount(wtx.vout[i].nValue)) continue;
-                if (fShroudNode && wtx.vout[i].nValue == SHROUDNODE_COIN_REQUIRED * COIN) continue;
+                if (chainActive.Height() +1 > Params(CBaseChainParams::MAIN).GetConsensus().mBlockTimeUpgradeHeight) {
+                    if (fShroudNode && wtx.vout[i].nValue == SHROUDNODE_COIN_REQUIRED * COIN) continue;
+                } else {
+                    if (fShroudNode && wtx.vout[i].nValue == SHROUDNODE_COIN_REQUIRED_OLD * COIN) continue;
+                }
                 // ignore outputs that are 10 times smaller then the smallest denomination
                 // otherwise they will just lead to higher fee / lower priority
                 if (wtx.vout[i].nValue <= vecPrivateSendDenominations.back() / 10) continue;

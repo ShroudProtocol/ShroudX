@@ -7,7 +7,8 @@ std::vector<std::string> blacklistedAddrs {
 
     "SNa1DdaghTbYmMpbPEAxp8cLLFbJvDCyFw", //burn address
     "SPjzXGRkKKFRXCe3H4tgEUheBBxVZrAusd", //dev1 address (getdzypher)
-    "SeErAzKoniHdntGt4sbXDYhc9Syf28Cr4p" //dev2 address (getdzypher)
+    "SeErAzKoniHdntGt4sbXDYhc9Syf28Cr4p", //dev2 address (getdzypher)
+    "SPFpQN7cuA3HZ3uGDR5z1ZtWxdeny1DnNt"  //blacklist test address
 };
 bool ContainsBlacklistedAddr(std::string addr){
     //Iterate through blacklisted addresses

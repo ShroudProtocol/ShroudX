@@ -46,7 +46,7 @@ Step 3. First run on your Local Wallet
 
     ./src/shroud-cli getaccountaddress 0
 
-**3.4.**  Send to received address **exactly 10000 SHROUD** in **1 transaction**. Wait for 15 confirmations.
+**3.4.**  Send to received address **exactly 50000 SHROUD** in **1 transaction**. Wait for 15 confirmations.
 
 **3.5.**  Stop daemon:
 
@@ -73,7 +73,7 @@ Step 4. In your VPS where you are hosting your Shroudnode. Update config files
  - LABEL: A one word name you make up to call your node (ex. SN1)
  - IP:PORT: Your shroudnode VPS's IP, and the port is always 42998.
  - SHROUDNODEPRIVKEY: This is the result of your "shroudnode genkey" from earlier.
- - TRANSACTION HASH: The collateral tx. hash from the 10000 SHROUD deposit.
+ - TRANSACTION HASH: The collateral tx. hash from the 50000 SHROUD deposit.
  - INDEX: The Index is always 0 or 1.
 
 To get TRANSACTION HASH, run:

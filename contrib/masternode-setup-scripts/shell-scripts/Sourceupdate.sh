@@ -9,8 +9,9 @@ clear
 echo "Starting Source Code Updater script"
 echo "Deleting old source code..."
 cd && sudo rm -rf Shroud
+cd && sudo rm -rf ShroudX
 echo "Downloading latest source code..."
-git clone https://github.com/ShroudXProject/Shroud
+git clone https://github.com/ShroudProtocol/ShroudX
 echo "Setting permissions..."
-sudo chmod -R 755 Shroud
+sudo chmod -R 755 ShroudX
 echo "Shroud Source Code Updated Successfully!"

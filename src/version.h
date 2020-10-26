@@ -22,7 +22,7 @@ static const int GETHEADERS_VERSION = 90010;
 static const int MIN_PEER_PROTO_VERSION = PROTOCOL_VERSION - 1;
 
 //! disconnect from all older peers after Shroudnode payment HF
-static const int MIN_PEER_PROTO_VERSION_AFTER_UPDATE = PROTOCOL_VERSION - 1;
+static const int MIN_PEER_PROTO_VERSION_AFTER_UPDATE = PROTOCOL_VERSION;
 
 //! nTime field added to CAddress, starting with this version;
 //! if possible, avoid requesting addresses nodes older than this

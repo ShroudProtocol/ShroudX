@@ -6671,8 +6671,8 @@ bool static ProcessMessage(CNode *pfrom, string strCommand,
             LOCK(cs_main);
             nHeight = chainActive.Height();
         }
-        //New update for masternode protocol change
-        int minPeerVersion = nHeight + 1 < chainparams.GetConsensus().nBlacklistEnableHeight ? MIN_PEER_PROTO_VERSION : MIN_PEER_PROTO_VERSION_AFTER_UPDATE;
+        //New update for block time protocol change
+        int minPeerVersion = nHeight + 1 < chainparams.GetConsensus().mBlockTimeUpgradeHeight ? MIN_PEER_PROTO_VERSION : MIN_PEER_PROTO_VERSION_AFTER_UPDATE;
         if (pfrom->nVersion < minPeerVersion) {
             // disconnect from peers older than this proto version
             // LogPrintf("peer=%d using obsolete version %i; disconnecting\n", pfrom->id, pfrom->nVersion);
@@ -6690,7 +6690,7 @@ bool static ProcessMessage(CNode *pfrom, string strCommand,
             pfrom->cleanSubVer = SanitizeString(pfrom->strSubVer);
             if(fCheckClientVersion){
                 int parsedVersion[4];
-                if (sscanf(pfrom->cleanSubVer.c_str(), "/Satoshi:%2d.%2d.%2d.%2d/",
+                if (sscanf(pfrom->cleanSubVer.c_str(), "/ShroudX:%2d.%2d.%2d.%2d/",
                     &parsedVersion[0], &parsedVersion[1], &parsedVersion[2], &parsedVersion[3]) == 4) {
                     int peerClientVersion = parsedVersion[0]*1000000 + parsedVersion[1]*10000 + parsedVersion[2]*100 + parsedVersion[3];
                     if (peerClientVersion < MIN_ZCOIN_CLIENT_VERSION) {

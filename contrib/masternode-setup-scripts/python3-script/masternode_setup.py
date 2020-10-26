@@ -13,9 +13,9 @@ from crontab import CronTab
 SERVER_IP = urlopen('http://ip.42.pl/raw').read()
 # BOOTSTRAP_URL = 
 #Change this to match your coin releases
-GITHUB_REPO = 'ShroudXProject/Shroud'
-BINARY_PREFIX = 'shroud-'
-BINARY_SUFFIX='-x86_64-linux-gnu.tar.gz'
+GITHUB_REPO = 'ShroudProtocol/ShroudX'
+BINARY_PREFIX = 'shroudx-'
+BINARY_SUFFIX='-x86_64-ubuntu-18.04.tar.gz'
 
 DEFAULT_COLOR = "\x1b[0m"
 PRIVATE_KEYS = []
@@ -60,7 +60,7 @@ def print_welcome():
     print("")
     print("")
     print("")
-    print_info("ShroudXProject masternode installer v1.0")
+    print_info("ShroudX masternode installer v1.0")
     print("")
     print("")
     print("")
@@ -93,10 +93,10 @@ def checkdaemon():
 
 # Helper functions for automating updating and installing daemon
 def getlatestrelease():
-    r = requests.get(url='https://api.github.com/repos/ShroudXProject/Shroud/releases/latest')
+    r = requests.get(url='https://api.github.com/repos/ShroudProtocol/ShroudX/releases/latest')
     data = json.loads(r.text)['assets']
     for x in range(len(data)):
-        if 'x86_64-linux-gnu.tar.gz' in data[x]['browser_download_url']:
+        if '-x86_64-ubuntu-18.04.tar.gz' in data[x]['browser_download_url']:
             return data[x]['browser_download_url']
 
 def getbinaryname(downloadurl):

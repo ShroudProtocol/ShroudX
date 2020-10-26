@@ -6,6 +6,7 @@
 #include "activeshroudnode.h"
 #include "consensus/consensus.h"
 #include "consensus/validation.h"
+#include "chainparams.h"
 #include "darksend.h"
 #include "init.h"
 //#include "governance.h"
@@ -779,9 +780,16 @@ bool CShroudnodeBroadcast::CheckOutpoint(int &nDos) {
             LogPrint("shroudnode", "CShroudnodeBroadcast::CheckOutpoint -- Failed to find Shroudnode UTXO, shroudnode=%s\n", vin.prevout.ToStringShort());
             return false;
         }
-        if (coins.vout[vin.prevout.n].nValue != SHROUDNODE_COIN_REQUIRED * COIN) {
-            LogPrint("shroudnode", "CShroudnodeBroadcast::CheckOutpoint -- Shroudnode UTXO should have 1000 IDX, shroudnode=%s\n", vin.prevout.ToStringShort());
-            return false;
+        if (chainActive.Height() +1 > Params(CBaseChainParams::MAIN).GetConsensus().mBlockTimeUpgradeHeight) {
+            if (coins.vout[vin.prevout.n].nValue != SHROUDNODE_COIN_REQUIRED * COIN) {
+                LogPrint("shroudnode", "CShroudnodeBroadcast::CheckOutpoint -- Shroudnode UTXO should have 50000 SHROUD, shroudnode=%s\n", vin.prevout.ToStringShort());
+                return false;
+            }
+        } else {
+            if (coins.vout[vin.prevout.n].nValue != SHROUDNODE_COIN_REQUIRED_OLD * COIN) {
+                LogPrint("shroudnode", "CShroudnodeBroadcast::CheckOutpoint -- Shroudnode UTXO should have 10000 SHROUD, shroudnode=%s\n", vin.prevout.ToStringShort());
+                return false;
+            }
         }
         if (chainActive.Height() - coins.nHeight + 1 < Params().GetConsensus().nShroudnodeMinimumConfirmations) {
             LogPrintf("CShroudnodeBroadcast::CheckOutpoint -- Shroudnode UTXO must have at least %d confirmations, shroudnode=%s\n",
