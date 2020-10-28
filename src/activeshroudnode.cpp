@@ -5,7 +5,6 @@
 
 #include "activeshroudnode.h"
 #include "consensus/consensus.h"
-#include "chainparams.h"
 #include "shroudnode.h"
 #include "shroudnode-sync.h"
 #include "shroudnode-payments.h"
@@ -234,16 +233,9 @@ void CActiveShroudnode::ManageStateInitial() {
         return;
     }
 
-    if (chainActive.Height() +1 > Params(CBaseChainParams::MAIN).GetConsensus().mBlockTimeUpgradeHeight) {
-        if (pwalletMain->GetBalance() < SHROUDNODE_COIN_REQUIRED * COIN) {
-            LogPrintf("CActiveShroudnode::ManageStateInitial -- %s: Wallet balance is < 50000 SHROUD\n", GetStateString());
-            return;
-        }
-    } else {
-        if (pwalletMain->GetBalance() < SHROUDNODE_COIN_REQUIRED_OLD * COIN) {
-            LogPrintf("CActiveShroudnode::ManageStateInitial -- %s: Wallet balance is < 10000 SHROUD\n", GetStateString());
-            return;
-        }
+    if (pwalletMain->GetBalance() < SHROUDNODE_COIN_REQUIRED * COIN) {
+        LogPrintf("CActiveShroudnode::ManageStateInitial -- %s: Wallet balance is < 50000 SHROUD\n", GetStateString());
+        return;
     }
 
     // Choose coins to use

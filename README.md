@@ -28,7 +28,7 @@ Shroud Protocol (SHROUD) is a new state of the art privacy coin that uses Sigma 
 | Stake Maturity | `100 MIN` |
 | Masternode Maturity | `100 MIN` |
 | Masternode Confirmations | `15` |
-| Masternode Collateral | `50000 SHROUD` |
+| Masternode Collateral | `10000 SHROUD` |
 | Default Port | `42998` |
 | RPC Port | `42999` |
 
