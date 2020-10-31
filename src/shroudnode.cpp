@@ -780,8 +780,8 @@ bool CShroudnodeBroadcast::CheckOutpoint(int &nDos) {
             return false;
         }
 
-        if (coins.vout[vin.prevout.n].nValue != SHROUDNODE_COIN_REQUIRED * COIN) {
-            LogPrint("shroudnode", "CShroudnodeBroadcast::CheckOutpoint -- Shroudnode UTXO should have 10000 SHROUD, shroudnode=%s\n", vin.prevout.ToStringShort());
+        if (coins.vout[vin.prevout.n].nValue != SHROUDNODE_COIN_REQUIRED(chainActive.Height()) * COIN) {
+            LogPrint("shroudnode", "CShroudnodeBroadcast::CheckOutpoint -- Shroudnode UTXO should have 50000 SHROUD, shroudnode=%s\n", vin.prevout.ToStringShort());
             return false;
         }
 

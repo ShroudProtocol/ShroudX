@@ -2311,7 +2311,7 @@ bool CDarkSendSigner::IsVinAssociatedWithPubkey(const CTxIn &txin, const CPubKey
     uint256 hash;
     if (GetTransaction(txin.prevout.hash, tx, Params().GetConsensus(), hash, true)) {
         BOOST_FOREACH(CTxOut out, tx.vout)
-        if (out.nValue == SHROUDNODE_COIN_REQUIRED * COIN && out.scriptPubKey == payee) return true;
+        if (out.nValue == SHROUDNODE_COIN_REQUIRED(chainActive.Height()) * COIN && out.scriptPubKey == payee) return true;
     }
 
     return false;

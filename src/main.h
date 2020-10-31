@@ -50,6 +50,21 @@ struct PrecomputedTransactionData;
 struct CNodeStateStats;
 struct LockPoints;
 
+/** Shroudnode collateral change */
+inline int64_t SHROUDNODE_COIN_REQUIRED(int nHeight)
+{
+    int64_t nSubsidy = 0;
+
+    if (nHeight <= 168100)
+        nSubsidy = 10000; //10k before update
+    else if (nHeight > 168100)
+        nSubsidy = 50000; //50k after update
+    else
+        nSubsidy = 50000;
+
+    return nSubsidy;
+}
+
 /** btzc: update Shroud config */
 /** Default for DEFAULT_WHITELISTRELAY. */
 static const bool DEFAULT_WHITELISTRELAY = true;

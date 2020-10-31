@@ -10,7 +10,7 @@
  * network protocol versioning
  */
 
-static const int PROTOCOL_VERSION = 90013;
+static const int PROTOCOL_VERSION = 90014;
 
 //! initial proto version, to be increased after version/verack negotiation
 static const int INIT_PROTO_VERSION = 90011;
@@ -19,7 +19,7 @@ static const int INIT_PROTO_VERSION = 90011;
 static const int GETHEADERS_VERSION = 90010;
 
 //! disconnect from peers older than this proto version
-static const int MIN_PEER_PROTO_VERSION = PROTOCOL_VERSION - 1;
+static const int MIN_PEER_PROTO_VERSION = PROTOCOL_VERSION - 2;
 
 //! disconnect from all older peers after Shroudnode payment HF
 static const int MIN_PEER_PROTO_VERSION_AFTER_UPDATE = PROTOCOL_VERSION;
