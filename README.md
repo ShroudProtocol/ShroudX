@@ -21,14 +21,15 @@ Shroud Protocol (SHROUD) is a new state of the art privacy coin that uses Sigma 
 | Mining Algorithm | `x16rv2` |
 | Block Time | `60s (1 min)` |
 | Type | `Hybrid PoW/PoS/MN` |
-| Max Supply | `50000000 SHROUD` |
-| Premine | `5000000 SHROUD` |
-| Premine Burned | `4724447 SHROUD` |
+| Max Supply | `50,000,000 SHROUD` |
+| Premine | `5,000,000 SHROUD` |
+| Premine Burned | `4,724,447 SHROUD` |
 | Coinbase Maturity | `100 Blocks` |
 | Stake Maturity | `100 MIN` |
 | Masternode Maturity | `100 MIN` |
 | Masternode Confirmations | `15` |
-| Masternode Collateral | `10000 SHROUD` |
+| Masternode Collateral until block 168100| `10,000 SHROUD` |
+| Masternode Collateral after block 168100 | `50,000 SHROUD` |
 | Default Port | `42998` |
 | RPC Port | `42999` |
 
@@ -91,9 +92,9 @@ Build
 
         git clone https://github.com/ShroudProtocol/ShroudX
 
-2.  Build Shroud core:
+2.  Build ShroudX core:
 
-    Configure and build the headless Shroud binaries as well as the GUI (if Qt is found).
+    Configure and build the headless ShroudX binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -108,7 +109,7 @@ Build
         ``make check``
 
 
-Setting up a Shroudnode
+Setting up a ShroudXnode
 ==================================
 
 Read [contrib/masternode-setup-scripts/README.md](contrib/masternode-setup-scripts/README.md) for instructions.

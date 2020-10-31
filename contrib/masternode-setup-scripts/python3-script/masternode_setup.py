@@ -235,8 +235,8 @@ def porologe():
     Alias: zn{}
     IP: {}
     Private key: {}
-    Transaction ID: [10k SHROUD deposit transaction id. 'shroudnode outputs']
-    Transaction shroud: [10k SHROUD deposit transaction shroud. 'shroudnode outputs']
+    Transaction ID: [50k SHROUD deposit transaction id. 'shroudnode outputs']
+    Transaction shroud: [50k SHROUD deposit transaction shroud. 'shroudnode outputs']
     mnconf line :
     {} {} {} txhash txindex
     --------------------------------------------------

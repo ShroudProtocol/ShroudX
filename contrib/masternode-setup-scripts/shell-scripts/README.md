@@ -1,4 +1,4 @@
-# Shroud Protocol Masternode Setup Scripts
+# ShroudX Protocol Masternode Setup Scripts
  Various scripts for setting up shroudnode.
 
 
@@ -16,7 +16,7 @@ Open your notepad or any text editor application on your pc and write this down 
 ```
 
 ### GETTING A VPS (STEP 1)
-Set up your VPS, we recommend [VULTR](https://www.vultr.com/?ref=8638319), and select ``DEPLOY INSTANCE`` then select the following
+Set up your VPS, we recommend [VULTR](https://www.vultr.com/), and select ``DEPLOY INSTANCE`` then select the following
 - Cloud compute
 - Location -any
 - Server type: Ubuntu 18.04
@@ -41,7 +41,7 @@ Note: The server will take a few minutes to deploy and will then shows as "runni
 
 	- Then head over to your ``Cheat Sheet`` 
 		- input your ``VPS`` ip address ( 201.47.23.109 ) under ``6. UNIQUE IP OF THE VPS``
-		- input your ``Shroudnode Name``  ( SN1 )under ``1. SHROUDNODE NAME``
+		- input your ``ShroudXnode Name``  ( SN1 )under ``1. SHROUDNODE NAME``
 
 3. Head over to your ``shroud`` directory
 	- Windows: %APPDATA%/shroud
@@ -50,19 +50,19 @@ Note: The server will take a few minutes to deploy and will then shows as "runni
 4. Open and edit ``shroudnode.conf`` file with your preferred Text Editor
 	- Inside ``shroudnode.conf`` file is this lines of text
 	```
-	# Shroudnode config file
+	# ShroudXnode config file
 	# Format: alias IP:port shroudnode_privatekey collateral_output_txid collateral_output_index
-	# Example: zn1 127.0.0.1:42998 7Cqyr4U7GU7qVo5TE1nrfA8XPVqh7GXBuEBPYzaWxEhiRRDLZ5c 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 1
+	# Example: sn1 127.0.0.1:42998 7Cqyr4U7GU7qVo5TE1nrfA8XPVqh7GXBuEBPYzaWxEhiRRDLZ5c 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 1
 	```
 6. UNIQUE IP OF THE VPS = 201.47.23.109:42998
-	- On line 4 add your ``1. SHROUDNODE NAME`` which is ``SN1``, next is add your ``6. UNIQUE IP OF THE VPS`` which is ``56.56.65.20`` and add the respective default port of ``encrypt`` which is ``42998``,next is add your  ``4. SHROUDNODE GENKEY`` which is ``84qRmqujiRqJ1vepSacScUz1EuBTYoaPM3cD5n1211THemaRWms``, and lastly add your ``5. SHROUDNODE OUTPUTS``which is ``4873d0c50c6ddc623bedcf0684dafc107809f9434b8426b728634f7c8c455615`` then add your ``outputidx`` which is ``1`` next to your ``5. SHROUDNODE OUTPUTS``.
+	- On line 4 add your ``1. SHROUDNODE NAME`` which is ``SN1``, next is add your ``6. UNIQUE IP OF THE VPS`` which is ``56.56.65.20`` and add the respective default port of ``shroud`` which is ``42998``,next is add your  ``4. SHROUDNODE GENKEY`` which is ``84qRmqujiRqJ1vepSacScUz1EuBTYoaPM3cD5n1211THemaRWms``, and lastly add your ``5. SHROUDNODE OUTPUTS``which is ``4873d0c50c6ddc623bedcf0684dafc107809f9434b8426b728634f7c8c455615`` then add your ``outputidx`` which is ``1`` next to your ``5. SHROUDNODE OUTPUTS``.
 
 	- It will look like this on the ``shroudnode.conf`` file
 
 	```
-	# Shroudnode config file
+	# ShroudXnode config file
 	# Format: alias IP:port shroudnode_privatekey collateral_output_txid collateral_output_index
-	# Example: zn1 127.0.0.1:42998 7Cqyr4U7GU7qVo5TE1nrfA8XPVqh7GXBuEBPYzaWxEhiRRDLZ5c 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 1
+	# Example: sn1 127.0.0.1:42998 7Cqyr4U7GU7qVo5TE1nrfA8XPVqh7GXBuEBPYzaWxEhiRRDLZ5c 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 1
 	SN1 201.47.23.109:42998 84qRmqujiRqJ1vepSacScUz1EuBTYoaPM3cD5n1211THemaRWms 4873d0c50c6ddc623bedcf0684dafc107809f9434b8426b728634f7c8c455615 1
 	```
 
@@ -80,12 +80,12 @@ Note: The server will take a few minutes to deploy and will then shows as "runni
 ### DOWNLOADING THE SCRIPT ON YOUR VPS (STEP 4)
 On your SSH Terminal type this lines below one at a time
 ```
-git clone https://github.com/ShroudXProject/Shroud
-chmod -R 755 Shroud
-cd Shroud/contrib/masternode-setup-scripts/shell-scripts
+git clone https://github.com/ShroudProtocol/ShroudX
+chmod -R 0755 ShroudX
+cd ShroudX/contrib/masternode-setup-scripts/shell-scripts
 ./Install.sh
 ```
-Note: The script allows you to automatically install ``Shroud`` from the ``Shroud`` repository.
+Note: The script allows you to automatically install ``ShroudX`` from the ``ShroudX`` repository.
 
 #### VPS WALLET CONFIGURATION (STEP 5)
 
@@ -128,27 +128,27 @@ Note: It will automatically change your ``shroud.conf`` file located on the ``sh
 
 3. YOU CAN CLICK ``Start all`` to start your shroudnode
 
-Note: Shroudnodes that are enabled will appear on your ``Shroudnodes`` tab
+Note: ShroudXnodes that are enabled will appear on your ``Shroudnodes`` tab
 
 ### HOW TO UPDATE YOUR SHROUD DAEMON WITH A SCRIPT
 Run first the ``Sourceupdate.sh`` shell file. On your SSH Terminal type this line below
 ```
 cd
-cd Shroud/contrib/masternode-setup-scripts/shell-scripts
+cd ShroudX/contrib/masternode-setup-scripts/shell-scripts
 ./Sourceupdate.sh
 ```
 
 When finish updating the source using ``Sourceupdate.sh`` then you can run the ``Update.sh`` shell file. On your SSH Terminal type this line below
 ```
 cd
-cd Shroud/contrib/masternode-setup-scripts/shell-scripts
+cd ShroudX/contrib/masternode-setup-scripts/shell-scripts
 ./Update.sh
 ```
-Note: It will automatically updates your daemon
+Note: It will automatically update your daemon
 
 
 
-if you have question regarding to the scripts feel free to head over to ``ShroudX Discord Channel`` (https://discord.gg/eCBUKf)
+if you have question regarding to the scripts feel free to head over to ``ShroudX Discord Channel`` (https://discord.gg/fj8KDYd)
 
 
 # GREAT JOB! YOU CONFIGURED YOUR SHROUDNODE.
