@@ -1,5 +1,5 @@
 # ShroudX
-Shroud Protocol (SHROUD) is a new state of the art privacy coin that uses Sigma and Dandelion++ Protocol along with TOR.
+ShroudX (SHROUD) is a new state of the art privacy coin that uses Sigma and Dandelion++ Protocol along with TOR.
 
 
 
