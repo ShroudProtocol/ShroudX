@@ -225,12 +225,18 @@ public:
                     (94001,uint256S("0xf8cb8c261b0befb1a36b56ef4c2bbaca3c78361cece7207bca7c21e1d74934f3"))
                     (95001,uint256S("0x2a823cbfac74d36ba6a2bdb26b766fc4390d47602b62b3e689b82175f4eec0c5"))
                     (96001,uint256S("0x00000000aabd6434c7ef9ca5a2c6c919116efbcb5101678cd074450175738307"))
-                    (97001,uint256S("0x000000009bb6dccde6c329968734358786d2b3642b13190eccb0788156fffd8e")),
-                    
+                    (97001,uint256S("0x000000009bb6dccde6c329968734358786d2b3642b13190eccb0788156fffd8e"))
+                    (168100,uint256S("0x66ef182c47db45cac73479003da7fce7254550504bf8e1d2c64ae21fa323bbcd"))
+                    (168101,uint256S("0x000000001c2d33dd68148ff03ebb88cffdb4a3b2e964d518f03df9240f03698e")) //first block that got new shroudnode collateral requirements (50k SHROUD)
+                    (169000,uint256S("0x000000002a72afc2612b84bba07b0a68569979ba86ae63a2b1ef16770ccac727"))
+                    (170000,uint256S("0x949ad95f8814122883d24d88c2a0a5493527ac719e5369977e217213d9d73997"))
+                    (171000,uint256S("0x00000000244eadf0d76e009b6bc820a73747d714cfd07cc2453eda5a970b2426"))
+                    (172300,uint256S("0x000000002d58bb10799dba8eb6fd52c77b4d8855ac5549d1297217a1e00c4840"))
+                    (172402,uint256S("0x9bac9817359776f33fde404a6c9e05f5a8a80fa3c9c4656ef0c65be260902fd5")),
 
 
-                1602487860,         // * UNIX timestamp of last checkpoint block
-                148544,             // * total number of transactions between genesis and last checkpoint
+                1607133856,         // * UNIX timestamp of last checkpoint block
+                171327,             // * total number of transactions between genesis and last checkpoint
                                     //   (the tx=... number in the SetBestChain debug.log lines)
                 1440                // * estimated number of transactions per day after checkpoint
         };
