@@ -181,12 +181,12 @@ public:
         //Initial seeders to use
         vSeeds.push_back(CDNSSeedData("shroudx.eu", "node1.shroudx.eu", false));
         vSeeds.push_back(CDNSSeedData("shroudx.eu", "node2.shroudx.eu", false));
-        vSeeds.push_back(CDNSSeedData("shroudx.eu", "node3.shroudx.eu", false));
+        //vSeeds.push_back(CDNSSeedData("shroudx.eu", "node3.shroudx.eu", false));
 
         // Single trusted IPs incase of seeder failure / downtime
         vSeeds.push_back(CDNSSeedData("167.86.99.164", "167.86.99.164", false));
         vSeeds.push_back(CDNSSeedData("207.180.198.33", "207.180.198.33", false));
-        vSeeds.push_back(CDNSSeedData("86.89.164.95", "86.89.164.95", false));
+        //vSeeds.push_back(CDNSSeedData("86.89.164.95", "86.89.164.95", false));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         base58Prefixes[PUBKEY_ADDRESS] = std::vector < unsigned char > (1, 63);//Shroud address starts with 'S'
@@ -373,7 +373,7 @@ public:
         // Single trusted IPs incase of seeder failure / downtime
         vSeeds.push_back(CDNSSeedData("167.86.99.164", "167.86.99.164", false));
         vSeeds.push_back(CDNSSeedData("207.180.198.33", "207.180.198.33", false));
-        vSeeds.push_back(CDNSSeedData("86.89.164.95", "86.89.164.95", false));
+        //vSeeds.push_back(CDNSSeedData("86.89.164.95", "86.89.164.95", false));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector < unsigned char > (1, 65);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector < unsigned char > (1, 178);
