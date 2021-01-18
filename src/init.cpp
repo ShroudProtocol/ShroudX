@@ -999,7 +999,7 @@ void InitParameterInteraction() {
     // -zapwalletmints implies a reindex and zapwallettxes=1
     if (GetBoolArg("-zapwalletmints", false)) {
         if (SoftSetBoolArg("-reindex", true))
-            LogPrintf("%s: parameter interaction: -zapwalletmints=<mode> -> setting -reshroud=1\n", __func__);
+            LogPrintf("%s: parameter interaction: -zapwalletmints=<mode> -> setting -reindex=1\n", __func__);
         if (SoftSetArg("-zapwallettxes", std::string("1")))
             LogPrintf("%s: parameter interaction: -zapwalletmints=<mode> -> setting -zapwallettxes=1\n", __func__);
     }
@@ -1146,7 +1146,7 @@ void InitLogging() {
     fLogIPs = GetBoolArg("-logips", DEFAULT_LOGIPS);
 
     LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    LogPrintf("Shroud version %s\n", FormatFullVersion());
+    LogPrintf("ShroudX version %s\n", FormatFullVersion());
 }
 
 /** Initialize bitcoin.
@@ -1965,24 +1965,24 @@ bool AppInit2(boost::thread_group &threadGroup, CScheduler &scheduler) {
             std::string msg = _("Disabled transaction index detected.\n\n"
                                 "Elysium requires an enabled transaction index. To enable "
                                 "transaction indexing, please use the \"-txindex\" option as "
-                                "command line argument or add \"txshroud=1\" to your client "
+                                "command line argument or add \"txindex=1\" to your client "
                                 "configuration file within your data directory.\n\n"
                                 "Configuration file"); // allow translation of main text body while still allowing differing config file string
             msg += ": " + GetConfigFile().string() + "\n\n";
             msg += _("Would you like Elysium to attempt to update your configuration file accordingly?");
             bool fRet = uiInterface.ThreadSafeMessageBox(msg, "", CClientUIInterface::MSG_INFORMATION | CClientUIInterface::BTN_OK | CClientUIInterface::MODAL | CClientUIInterface::BTN_ABORT);
             if (fRet) {
-                // add txshroud=1 to config file in GetConfigFile()
+                // add txindex=1 to config file in GetConfigFile()
                 fs::path configPathInfo = GetConfigFile();
                 FILE *fp = fsbridge::fopen(configPathInfo, "at");
                 if (!fp) {
                     std::string failMsg = _("Unable to update configuration file at");
                     failMsg += ":\n" + GetConfigFile().string() + "\n\n";
                     failMsg += _("The file may be write protected or you may not have the required permissions to edit it.\n");
-                    failMsg += _("Please add txshroud=1 to your configuration file manually.\n\nElysium will now shutdown.");
+                    failMsg += _("Please add txindex=1 to your configuration file manually.\n\nElysium will now shutdown.");
                     return InitError(failMsg);
                 }
-                fprintf(fp, "\ntxshroud=1\n");
+                fprintf(fp, "\ntxindex=1\n");
                 fflush(fp);
                 fclose(fp);
                 std::string strUpdated = _(
@@ -1991,7 +1991,7 @@ bool AppInit2(boost::thread_group &threadGroup, CScheduler &scheduler) {
                 uiInterface.ThreadSafeMessageBox(strUpdated, "", CClientUIInterface::MSG_INFORMATION | CClientUIInterface::BTN_OK | CClientUIInterface::MODAL);
                 return false;
             } else {
-                return InitError(_("Please add txshroud=1 to your configuration file manually.\n\nOmni Core will now shutdown."));
+                return InitError(_("Please add txindex=1 to your configuration file manually.\n\nOmni Core will now shutdown."));
             }
         }
 
@@ -2101,7 +2101,7 @@ bool AppInit2(boost::thread_group &threadGroup, CScheduler &scheduler) {
 
     if ((fShroudNode || shroudnodeConfig.getCount() > 0) && !fTxIndex) {
         return InitError("Enabling Shroudnode support requires turning on transaction indexing."
-                                 "Please add txshroud=1 to your configuration and start with -reindex");
+                                 "Please add txindex=1 to your configuration and start with -reindex");
     }
 
     if (fShroudNode) {
