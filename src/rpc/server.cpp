@@ -255,11 +255,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Shroud server.");
+            "\nStop ShroudX server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "Shroud server stopping";
+    return "ShroudX server stopping";
 }
 
 /**
@@ -277,7 +277,7 @@ static const CRPCCommand vRPCCommands[] =
     { "addressindex",       "getaddressdeltas",       &getaddressdeltas,       false },
     { "addressindex",       "getaddresstxids",        &getaddresstxids,        false },
     { "addressindex",       "getaddressbalance",      &getaddressbalance,      false },
-        /* Shroud features */
+        /* ShroudX features */
     { "shroud",               "shroudnode",            &shroudnode,             true  },
     { "shroud",               "insync",                &insync,                 true  },
     { "shroud",               "shroudnodelist",        &shroudnodelist,         true  },

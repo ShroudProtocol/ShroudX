@@ -17,7 +17,7 @@ std::map<uint256, CSporkMessage> mapSporks;
 
 void CSporkManager::ProcessSpork(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
 {
-    if(fLiteMode) return; // disable all Shroud specific functionality
+    if(fLiteMode) return; // disable all ShroudX specific functionality
 
     if (strCommand == NetMsgType::SPORK) {
 

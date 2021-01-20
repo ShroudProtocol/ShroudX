@@ -155,7 +155,7 @@ bool createSigmaSpendAPITransaction(CWalletTx& wtx,
         throw JSONAPIError(API_INVALID_PARAMETER, "Required at least an address to send");
     }
     UniValue output(UniValue::VOBJ);
-    for(size_t shroud=0; index<outputs.size(); index++){
+    for(size_t index=0; index<outputs.size(); index++){
         output = outputs[index];
         std::string strAddr = find_value(output, "address").get_str();
         // satoshi amount

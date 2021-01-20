@@ -1,5 +1,5 @@
 # ShroudX
-ShroudX (SHROUD) is a new state of the art privacy coin that uses Sigma and Dandelion++ Protocol along with TOR.
+ShroudX (SHRX) is a new state of the art privacy coin that uses Sigma and Dandelion++ Protocol along with TOR.
 
 
 
@@ -16,25 +16,25 @@ ShroudX (SHROUD) is a new state of the art privacy coin that uses Sigma and Dand
 | Specification | Value |
 |:-----------|:-----------|
 | Name | `ShroudX` |
-| Ticker | `SHROUD` |
+| Ticker | `SHRX` |
 | Consensus Algorithm | `PoW & PoS` |
 | Mining Algorithm | `x16rv2` |
 | Block Time | `60s (1 min)` |
 | Type | `Hybrid PoW/PoS/MN` |
-| Max Supply | `50,000,000 SHROUD` |
-| Premine | `5,000,000 SHROUD` |
-| Premine Burned | `4,724,447 SHROUD` |
+| Max Supply | `50,000,000 SHRX` |
+| Premine | `5,000,000 SHRX` |
+| Premine Burned | `4,724,447 SHRX` |
 | Coinbase Maturity | `100 Blocks` |
 | Stake Maturity | `100 MIN` |
 | Masternode Maturity | `100 MIN` |
 | Masternode Confirmations | `15` |
-| Masternode Collateral until block 168100| `10,000 SHROUD` |
-| Masternode Collateral after block 168100 | `50,000 SHROUD` |
+| Masternode Collateral until block 168100| `10,000 SHRX` |
+| Masternode Collateral after block 168100 | `50,000 SHRX` |
 | Default Port | `42998` |
 | RPC Port | `42999` |
 
 #### Block Rewards
-| Phase | Reward (SHROUD) | PoW | PoS | MN | Blocks |
+| Phase | Reward (SHRX) | PoW | PoS | MN | Blocks |
 |:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
 | GENESIS | `0` | | | | `1` |
 | PREMINE | `5,000,000` | | | | `2` |

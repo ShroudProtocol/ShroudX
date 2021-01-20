@@ -171,7 +171,7 @@ void SendMPDialog::updateFrom()
         if (CheckFee(currentSetFromAddress, 16)) {
             ui->feeWarningLabel->setVisible(false);
         } else {
-            ui->feeWarningLabel->setText("WARNING: The sending address is low on SHROUD for transaction fees. Please topup the SHROUD balance for the sending address to send Elysium transactions.");
+            ui->feeWarningLabel->setText("WARNING: The sending address is low on SHRX for transaction fees. Please topup the SHRX balance for the sending address to send Elysium transactions.");
             ui->feeWarningLabel->setVisible(true);
         }
     }

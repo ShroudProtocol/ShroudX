@@ -675,7 +675,7 @@ CShroudnode* CShroudnodeMan::GetNextShroudnodeInQueueForPayment(int nBlockHeight
     BOOST_FOREACH(CShroudnode &mn, vShroudnodes)
     {
         index += 1;
-        // LogPrintf("shroud=%s, mn=%s\n", index, mn.ToString());
+        // LogPrintf("index=%s, mn=%s\n", index, mn.ToString());
         /*if (!mn.IsValidForPayment()) {
             LogPrint("shroudnodeman", "Shroudnode, %s, addr(%s), not-qualified: 'not valid for payment'\n",
                      mn.vin.prevout.ToStringShort(), CBitcoinAddress(mn.pubKeyCollateralAddress.GetID()).ToString());

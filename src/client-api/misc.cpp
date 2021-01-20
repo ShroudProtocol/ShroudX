@@ -42,7 +42,7 @@ void parseHelpString(UniValue& result, std::string helpString)
         std::string categoryKey = categoryVec[0];
         categoryKey.erase(boost::remove_if(categoryKey, boost::is_any_of("= ")), categoryKey.end());
 
-        for(unsigned shroud=1; index<categoryVec.size(); index++){
+        for(unsigned index=1; index<categoryVec.size(); index++){
            categoryArr.push_back(categoryVec[index]);
         }
         result.push_back(Pair(categoryKey,categoryArr));
@@ -215,7 +215,7 @@ UniValue stop(Type type, const UniValue& data, const UniValue& auth, bool fHelp)
     if (fHelp)
         throw runtime_error(
             "stop\n"
-            "\nStop ShroudXProject server.");
+            "\nStop ShroudX server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();

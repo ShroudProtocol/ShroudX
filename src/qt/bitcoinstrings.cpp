@@ -225,10 +225,10 @@ QT_TRANSLATE_NOOP("shroud-core", ""
 "Unable to locate enough PrivateSend denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("shroud-core", ""
 "Unable to locate enough PrivateSend non-denominated funds for this "
-"transaction that are not equal 10000 SHROUD."),
+"transaction that are not equal 10000 SHRX."),
 QT_TRANSLATE_NOOP("shroud-core", ""
 "Unable to locate enough funds for this transaction that are not equal 10000 "
-"SHROUD."),
+"SHRX."),
 QT_TRANSLATE_NOOP("shroud-core", ""
 "Unable to rewind the database to a pre-fork state. You will need to "
 "redownload the blockchain"),

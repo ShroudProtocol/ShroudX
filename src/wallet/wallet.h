@@ -801,7 +801,7 @@ public:
     void ListLockedCoins(std::vector<COutPoint>& vOutpts);
 
     // shroudnode
-    /// Get 10000 SHROUD output and keys which can be used for the Shroudnode
+    /// Get 50000 SHRX output and keys which can be used for the Shroudnode
     bool GetShroudnodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash = "", std::string strOutputIndex = "");
     /// Extract txin information and keys from output
     bool GetVinAndKeysFromOutput(COutput out, CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet);

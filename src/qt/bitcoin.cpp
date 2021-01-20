@@ -517,7 +517,7 @@ void BitcoinApplication::initializeResult(int retval)
         }
         
         // Now that initialization/startup is done, process any command-line
-        // shroud: URIs or payment requests:
+        // shroudX: URIs or payment requests:
         connect(paymentServer, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
                          window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
         connect(window, SIGNAL(receivedURI(QString)),
@@ -681,7 +681,7 @@ int main(int argc, char *argv[])
     std::string strErr;
     if(!shroudnodeConfig.read(strErr)) {
         QMessageBox::critical(0, QObject::tr("ShroudX Core"),
-                              QObject::tr("Error reading shroudxnode configuration file: %1").arg(strErr.c_str()));
+                              QObject::tr("Error reading shroudnode configuration file: %1").arg(strErr.c_str()));
         return EXIT_FAILURE;
     }
 
@@ -695,7 +695,7 @@ int main(int argc, char *argv[])
         exit(EXIT_SUCCESS);
 
     // Start up the payment server early, too, so impatient users that click on
-    // shroud: links repeatedly have their payment requests routed to this process:
+    // shroudx: links repeatedly have their payment requests routed to this process:
     app.createPaymentServer();
 #endif
     /// 9. Main GUI initialization

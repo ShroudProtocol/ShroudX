@@ -112,7 +112,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1611840329; // November 15th, 2017.
 
         // The best chain should have at least this much work
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000011d73ca8f448a300");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000006b9d4f81a1bc7be6");
 
         consensus.nCheckBugFixedAtBlock = ZC_CHECK_BUG_FIXED_AT_BLOCK;
         consensus.nShroudnodePaymentsBugFixedAtBlock = ZC_SHROUDNODE_PAYMENT_BUG_FIXED_AT_BLOCK;
@@ -156,7 +156,7 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
        `  * a large 32-bit integer with any alignment.
          */
-        //btzc: update shroud pchMessage
+        //btzc: update shroudx pchMessage
         pchMessageStart[0] = 0x61;
         pchMessageStart[1] = 0x26;
         pchMessageStart[2] = 0xfe;
@@ -189,7 +189,7 @@ public:
         //vSeeds.push_back(CDNSSeedData("86.89.164.95", "86.89.164.95", false));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector < unsigned char > (1, 63);//Shroud address starts with 'S'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector < unsigned char > (1, 63);//ShroudX address starts with 'S'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector < unsigned char > (1, 10);
         base58Prefixes[SECRET_KEY] = std::vector < unsigned char > (1, 210);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container < std::vector < unsigned char > > ();
@@ -227,16 +227,18 @@ public:
                     (96001,uint256S("0x00000000aabd6434c7ef9ca5a2c6c919116efbcb5101678cd074450175738307"))
                     (97001,uint256S("0x000000009bb6dccde6c329968734358786d2b3642b13190eccb0788156fffd8e"))
                     (168100,uint256S("0x66ef182c47db45cac73479003da7fce7254550504bf8e1d2c64ae21fa323bbcd"))
-                    (168101,uint256S("0x000000001c2d33dd68148ff03ebb88cffdb4a3b2e964d518f03df9240f03698e")) //first block that got new shroudnode collateral requirements (50k SHROUD)
+                    (168101,uint256S("0x000000001c2d33dd68148ff03ebb88cffdb4a3b2e964d518f03df9240f03698e")) //first block that got new shroudnode collateral requirements (50k SHRX)
                     (169000,uint256S("0x000000002a72afc2612b84bba07b0a68569979ba86ae63a2b1ef16770ccac727"))
                     (170000,uint256S("0x949ad95f8814122883d24d88c2a0a5493527ac719e5369977e217213d9d73997"))
                     (171000,uint256S("0x00000000244eadf0d76e009b6bc820a73747d714cfd07cc2453eda5a970b2426"))
                     (172300,uint256S("0x000000002d58bb10799dba8eb6fd52c77b4d8855ac5549d1297217a1e00c4840"))
-                    (172402,uint256S("0x9bac9817359776f33fde404a6c9e05f5a8a80fa3c9c4656ef0c65be260902fd5")),
+                    (200000,uint256S("0x00000000171a30abc8724f5ddc1bf5f168129bddbac4c78abab020d59aee6c6a"))
+                    (225000,uint256S("0x00000000147a0e14ee466a730aa8fe94bf8dd5f3756e16a2cc155881263e2742"))
+                    (237000,uint256S("0x00000001290397d04f383e6ad9239713b28bd8588e7cc066127e1ff15bfe738b")),
 
 
-                1607133856,         // * UNIX timestamp of last checkpoint block
-                171327,             // * total number of transactions between genesis and last checkpoint
+                1611118837,         // * UNIX timestamp of last checkpoint block
+                363644,             // * total number of transactions between genesis and last checkpoint
                                     //   (the tx=... number in the SetBestChain debug.log lines)
                 1440                // * estimated number of transactions per day after checkpoint
         };
@@ -373,7 +375,7 @@ public:
         //vFixedSeeds.clear();
         //vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        // shroud test seeds
+        // shroudx test seeds
         // vSeeds.push_back(CDNSSeedData("test1.shroudx.eu", "test1.shroudx.eu", false));
 
         // Single trusted IPs incase of seeder failure / downtime

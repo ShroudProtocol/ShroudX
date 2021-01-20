@@ -580,12 +580,12 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
     if (vNodes.empty() && chainActive.Tip()->nHeight > 100)
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Shroud is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "ShroudX is not connected!");
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Shroud is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "ShroudX is downloading blocks...");
 
     if (!shroudnodeSync.IsSynced() && chainActive.Tip()->nHeight > 20000)
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Shroud Core is syncing with network...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "ShroudX Core is syncing with network...");
 
     static unsigned int nTransactionsUpdatedLast;
     if (!lpval.isNull())

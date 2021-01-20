@@ -80,7 +80,7 @@
 using namespace std;
 
 #if defined(NDEBUG)
-# error "Shroud cannot be compiled without assertions."
+# error "ShroudX cannot be compiled without assertions."
 #endif
 
 /**
@@ -120,7 +120,7 @@ CTxMemPool mempool(::minRelayTxFee);
 FeeFilterRounder filterRounder(::minRelayTxFee);
 CTxMemPool stempool(::minRelayTxFee);
 
-// Shroud shroudnode
+// ShroudX shroudnode
 map <uint256, int64_t> mapRejectedBlocks GUARDED_BY(cs_main);
 
 struct IteratorComparator {
@@ -153,7 +153,7 @@ static void CheckBlockIndex(const Consensus::Params &consensusParams);
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Shroud Signed Message:\n";
+const string strMessageMagic = "ShroudX Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -4597,14 +4597,14 @@ bool CheckBlock(const CBlock &block, CValidationState &state,
                         instantsend.Relay(hashLocked);
                         LOCK(cs_main);
                         mapRejectedBlocks.insert(make_pair(block.GetHash(), GetTime()));
-                        return state.DoS(0, error("CheckBlock(SHROUD): transaction %s conflicts with transaction lock %s",
+                        return state.DoS(0, error("CheckBlock(SHRX): transaction %s conflicts with transaction lock %s",
                                                   tx.GetHash().ToString(), hashLocked.ToString()),
                                          REJECT_INVALID, "conflict-tx-lock");
                     }
                 }
             }
         } else {
-            LogPrintf("CheckBlock(SHROUD): spork is off, skipping transaction locking checks\n");
+            LogPrintf("CheckBlock(SHRX): spork is off, skipping transaction locking checks\n");
         }
 
         // Check transactions
@@ -6224,7 +6224,7 @@ bool static AlreadyHave(const CInv &inv) EXCLUSIVE_LOCKS_REQUIRED(cs_main) {
             return false;
 
         /*
-            Shroud Related Inventory Messages
+            ShroudX Related Inventory Messages
 
             --
 
@@ -8693,7 +8693,7 @@ bool SendMessages(CNode *pto) {
             {
                 pto->filterInventoryKnown.insert(inv.hash);
 
-                LogPrint("net", "SendMessages -- queued inv: %s  shroud=%d peer=%d\n", inv.ToString(), vInv.size(), pto->id);
+                LogPrint("net", "SendMessages -- queued inv: %s  index=%d peer=%d\n", inv.ToString(), vInv.size(), pto->id);
                 vInv.push_back(inv);
                 if (vInv.size() >= 1000)
                 {

@@ -770,7 +770,7 @@ class CAlert(object):
 
 
 class PrefilledTransaction(object):
-    def __init__(self, shroud=0, tx = None):
+    def __init__(self, index=0, tx = None):
         self.index = index
         self.tx = tx
 
@@ -792,7 +792,7 @@ class PrefilledTransaction(object):
         return self.serialize(with_witness=True)
 
     def __repr__(self):
-        return "PrefilledTransaction(shroud=%d, tx=%s)" % (self.index, repr(self.tx))
+        return "PrefilledTransaction(index=%d, tx=%s)" % (self.index, repr(self.tx))
 
 # This is what we send on the wire, in a cmpctblock message.
 class P2PHeaderAndShortIDs(object):

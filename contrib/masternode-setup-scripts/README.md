@@ -9,7 +9,7 @@ Open your notepad or any text editor application on your pc and write this down 
 ```
 1. SHROUDNODE NAME = SN1
 2. COLLATERAL = 50000
-3. SHROUD ADDRESS = SZRnGyyPv1FVGgMGn7JXbuHCGbsgiBRprq
+3. SHROUDX ADDRESS = SZRnGyyPv1FVGgMGn7JXbuHCGbsgiBRprq
 4. SHROUDNODE GENKEY = 84qRmqujiRqJ1vepSacScUz1EuBTYoaPM3cD5n1211THemaRWms
 5. SHROUDNODE OUTPUTS = 4873d0c50c6ddc623bedcf0684dafc107809f9434b8426b728634f7c8c455615 1
 6. UNIQUE IP OF THE VPS = 201.47.23.109:42998
@@ -33,9 +33,9 @@ Note: The server will take a few minutes to deploy and will then shows as "runni
 	```
 	- Copy the generated key from your ``debug console`` and open your ``Cheat Sheet`` then paste the generated key on ``4. SHROUDNODE GENKEY`` (84qRmqujiRqJ1vepSacScUz1EuBTYoaPM3cD5n1211THemaRWms)
 
-	- Copy your stealth address under the ``Receive`` tab (for example: SZRnGyyPv1FVGgMGn7JXbuHCGbsgiBRprq ) and paste it on your ``Cheat Sheet`` on ``3. SHROUD ADDRESS``
+	- Copy your stealth address under the ``Receive`` tab (for example: SZRnGyyPv1FVGgMGn7JXbuHCGbsgiBRprq ) and paste it on your ``Cheat Sheet`` on ``3. SHROUDX ADDRESS``
 
-	- Copy the stealth address again from your ``Cheat Sheet`` under ``3. SHROUD ADDRESS`` and head over to your ``Send`` tab then paste the ``SHROUD ADDRESS`` on the ``Enter a Shroud address`` area on the ``Send`` tab and input the ``2. SHROUDNODE COLLATERAL`` which is ``50000`` SHROUD on the ``Amount`` area then click ``Send`` and wait for ``6`` confirmations.
+	- Copy the stealth address again from your ``Cheat Sheet`` under ``3. SHROUDX ADDRESS`` and head over to your ``Send`` tab then paste the ``SHROUDX ADDRESS`` on the ``Enter a ShroudX address`` area on the ``Send`` tab and input the ``2. SHROUDNODE COLLATERAL`` which is ``50000`` SHRX on the ``Amount`` area then click ``Send`` and wait for ``6`` confirmations.
 
 	- Then click go to your Transactions tab and right click the transaction when you send the ``SHROUDNODE COLLATERAL`` then click ``Copy transaction ID`` when a windows pops-up and head over to your ``debug console`` then type ``shroudnode outputs`` then press ``enter`` copy the ``txhash`` and paste it on your ``Cheat Sheet`` under ``5. SHROUDNODE OUTPUTS`` ( 4873d0c50c6ddc623bedcf0684dafc107809f9434b8426b728634f7c8c455615 ) and also don't forget to copy the ``outputidx`` ( 1 ) and paste it next to the ``txhash``.
 
@@ -130,7 +130,7 @@ Note: It will automatically change your ``shroud.conf`` file located on the ``sh
 
 Note: Shroudnodes that are enabled will appear on your ``Shroudnodes`` tab
 
-### HOW TO UPDATE YOUR SHROUD DAEMON WITH A SCRIPT
+### HOW TO UPDATE YOUR SHROUDX DAEMON WITH A SCRIPT
 Run first the ``Sourceupdate.sh`` shell file. On your SSH Terminal type this line below
 ```
 cd
