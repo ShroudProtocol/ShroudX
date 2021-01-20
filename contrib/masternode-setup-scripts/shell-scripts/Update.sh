@@ -6,7 +6,7 @@
 
 
 clear
-echo "Starting ShroudXnode update script"
+echo "Starting Shroudnode update script"
 cd && cd /usr/local/bin
 echo "Stopping shroudd..."
 shroud-cli stop

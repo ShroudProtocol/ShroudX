@@ -5,7 +5,7 @@
 
 
 clear
-echo "Starting ShroudXnode auto download and install script"
+echo "Starting Shroudnode auto download and install script"
 echo "Updating the machine..."
 sudo apt-get update
 echo "Machine successfully updated"
@@ -60,4 +60,4 @@ shroudd -daemon
 echo "Cleaning up..."
 cd && cd ShroudX/contrib/masternode-setup-scripts/shell-scripts
 rm -rf shroudx-1.2.4-x86_64-ubuntu-18.04.tar.gz
-echo "ShroudXnode Installed Successfully!"
+echo "Shroudnode Installed Successfully!"

@@ -5,7 +5,7 @@
 
 
 clear
-echo "Starting ShroudXnode Auto Config script"
+echo "Starting Shroudnode Auto Config script"
 cd && cd /usr/local/bin
 echo "Stopping shroudd..."
 shroud-cli stop
@@ -29,4 +29,4 @@ EOF
 echo "Running shroudd..."
 cd && cd /usr/local/bin
 shroudd -daemon
-echo "ShroudXnode Configuration Completed!"
+echo "Shroudnode Configuration Completed!"

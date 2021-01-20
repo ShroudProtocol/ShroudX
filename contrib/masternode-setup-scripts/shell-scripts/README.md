@@ -41,7 +41,7 @@ Note: The server will take a few minutes to deploy and will then shows as "runni
 
 	- Then head over to your ``Cheat Sheet`` 
 		- input your ``VPS`` ip address ( 201.47.23.109 ) under ``6. UNIQUE IP OF THE VPS``
-		- input your ``ShroudXnode Name``  ( SN1 )under ``1. SHROUDNODE NAME``
+		- input your ``Shroudnode Name``  ( SN1 )under ``1. SHROUDNODE NAME``
 
 3. Head over to your ``shroud`` directory
 	- Windows: %APPDATA%/shroud
@@ -50,7 +50,7 @@ Note: The server will take a few minutes to deploy and will then shows as "runni
 4. Open and edit ``shroudnode.conf`` file with your preferred Text Editor
 	- Inside ``shroudnode.conf`` file is this lines of text
 	```
-	# ShroudXnode config file
+	# Shroudnode config file
 	# Format: alias IP:port shroudnode_privatekey collateral_output_txid collateral_output_index
 	# Example: sn1 127.0.0.1:42998 7Cqyr4U7GU7qVo5TE1nrfA8XPVqh7GXBuEBPYzaWxEhiRRDLZ5c 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 1
 	```
@@ -60,7 +60,7 @@ Note: The server will take a few minutes to deploy and will then shows as "runni
 	- It will look like this on the ``shroudnode.conf`` file
 
 	```
-	# ShroudXnode config file
+	# Shroudnode config file
 	# Format: alias IP:port shroudnode_privatekey collateral_output_txid collateral_output_index
 	# Example: sn1 127.0.0.1:42998 7Cqyr4U7GU7qVo5TE1nrfA8XPVqh7GXBuEBPYzaWxEhiRRDLZ5c 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 1
 	SN1 201.47.23.109:42998 84qRmqujiRqJ1vepSacScUz1EuBTYoaPM3cD5n1211THemaRWms 4873d0c50c6ddc623bedcf0684dafc107809f9434b8426b728634f7c8c455615 1
@@ -128,7 +128,7 @@ Note: It will automatically change your ``shroud.conf`` file located on the ``sh
 
 3. YOU CAN CLICK ``Start all`` to start your shroudnode
 
-Note: ShroudXnodes that are enabled will appear on your ``Shroudnodes`` tab
+Note: Shroudnodes that are enabled will appear on your ``Shroudnodes`` tab
 
 ### HOW TO UPDATE YOUR SHROUD DAEMON WITH A SCRIPT
 Run first the ``Sourceupdate.sh`` shell file. On your SSH Terminal type this line below

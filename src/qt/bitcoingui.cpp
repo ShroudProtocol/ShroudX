@@ -363,9 +363,9 @@ void BitcoinGUI::createActions()
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
     // can be triggered from the tray menu, and need to show the GUI to be useful.
     shroudnodeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/shroudnodes"), tr("&Shroudnodes"), this);
-    shroudnodeAction->setStatusTip(tr("Browse ShroudXnodes"));
+    shroudnodeAction->setStatusTip(tr("Browse Shroudnodes"));
     shroudnodeAction->setToolTip(shroudnodeAction->statusTip());
-    shroudnodeAction->setCheckable(true);
+    shroudnodeAction->setCheckable(true); 
 #ifdef Q_OS_MAC
     shroudnodeAction->setShortcut(QKeySequence(Qt::CTRL + key++));
 #else

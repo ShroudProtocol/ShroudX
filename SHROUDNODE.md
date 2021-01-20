@@ -1,4 +1,4 @@
-ShroudXnode Build Instructions and Notes
+Shroudnode Build Instructions and Notes
 =============================
  - Version 1.0.2
  - Date: October 31, 2020
@@ -52,7 +52,7 @@ Step 3. First run on your Local Wallet
 
     ./src/shroud-cli stop
 
-Step 4. In your VPS where you are hosting your ShroudXnode. Update config files
+Step 4. In your VPS where you are hosting your Shroudnode. Update config files
 ----------------------
 **4.1.**  Create file **shroud.conf** (in folder **~/.shroud**)
 
@@ -88,9 +88,9 @@ Sample of shroudnode.conf:
 
     SN1 51.52.53.54:42998 XrxSr3fXpX3dZcU7CoiFuFWqeHYw83r28btCFfIHqf6zkMp1PZ4 d6fd38868bb8f9958e34d5155437d009b72dfd33fc28874c87fd42e51c0f74fdb 0
 
-Step 5. Run a ShroudXnode
+Step 5. Run a Shroudnode
 ----------------------
-**5.1.**  Start ShroudXnode:
+**5.1.**  Start Shroudnode:
 
     ./src/shroud-cli shroudnode start-alias <LABEL>
 
