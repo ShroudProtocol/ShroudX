@@ -40,9 +40,9 @@ echo "Successfully installed required dependencies"
 echo "Updating/Upgrading OS..."
 sudo apt update && sudo apt upgrade -y
 echo "Downloading ShroudX latest build..."
-wget -N https://github.com/ShroudProtocol/ShroudX/releases/download/v1.2.4/shroudx-1.2.4-x86_64-ubuntu-18.04.tar.gz
+wget -N https://github.com/ShroudProtocol/ShroudX/releases/download/v1.2.5/shroudx-1.2.5-x86_64-ubuntu-18.04.tar.gz
 echo "Extracting build..."
-sudo tar -C /usr/local/bin -zxvf shroudx-1.2.4-x86_64-ubuntu-18.04.tar.gz
+sudo tar -C /usr/local/bin -zxvf shroudx-1.2.5-x86_64-ubuntu-18.04.tar.gz
 echo "Setting permissions..."
 cd && sudo chmod +x /usr/local/bin/shroud*
 sudo chmod +x /usr/local/bin/tor*
@@ -59,5 +59,5 @@ cd && cd /usr/local/bin
 shroudd -daemon
 echo "Cleaning up..."
 cd && cd ShroudX/contrib/masternode-setup-scripts/shell-scripts
-rm -rf shroudx-1.2.4-x86_64-ubuntu-18.04.tar.gz
+rm -rf shroudx-1.2.5-x86_64-ubuntu-18.04.tar.gz
 echo "Shroudnode Installed Successfully!"
