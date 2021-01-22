@@ -154,7 +154,7 @@ bool AppInit(int argc, char* argv[])
         fDaemon = GetBoolArg("-daemon", false);
         if (fDaemon)
         {
-            fprintf(stdout, "Shroud server starting\n");
+            fprintf(stdout, "ShroudX server starting\n");
 
             // Daemonize
             pid_t pid = fork();
