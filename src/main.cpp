@@ -153,7 +153,7 @@ static void CheckBlockIndex(const Consensus::Params &consensusParams);
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "ShroudX Signed Message:\n";
+const string strMessageMagic = "Shroud Signed Message:\n";
 
 // Internal stuff
 namespace {
