@@ -187,6 +187,17 @@ public:
         vSeeds.push_back(CDNSSeedData("167.86.99.164", "167.86.99.164", false));
         vSeeds.push_back(CDNSSeedData("207.180.198.33", "207.180.198.33", false));
         //vSeeds.push_back(CDNSSeedData("86.89.164.95", "86.89.164.95", false));
+        vSeeds.push_back(CDNSSeedData("139.99.204.202", "139.99.204.202", false));
+        vSeeds.push_back(CDNSSeedData("139.99.244.103", "139.99.244.103", false));
+        vSeeds.push_back(CDNSSeedData("207.112.18.86", "207.112.18.86", false));
+        vSeeds.push_back(CDNSSeedData("174.91.51.186", "174.91.51.186", false));
+        vSeeds.push_back(CDNSSeedData("147.135.86.87", "147.135.86.87", false));
+        vSeeds.push_back(CDNSSeedData("139.99.135.6", "139.99.135.6", false));
+        vSeeds.push_back(CDNSSeedData("139.99.246.138", "139.99.246.138", false));
+        vSeeds.push_back(CDNSSeedData("139.99.239.121", "139.99.239.121", false));
+        vSeeds.push_back(CDNSSeedData("209.250.229.123", "209.250.229.123", false));
+        vSeeds.push_back(CDNSSeedData("45.32.216.49", "45.32.216.49", false));
+        vSeeds.push_back(CDNSSeedData("161.97.105.255", "161.97.105.255", false));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         base58Prefixes[PUBKEY_ADDRESS] = std::vector < unsigned char > (1, 63);//ShroudX address starts with 'S'
