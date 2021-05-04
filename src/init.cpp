@@ -349,7 +349,8 @@ void Shutdown()
 /**
  * Signal handlers are very limited in what they are allowed to do, so:
  */
-void HandleSIGTERM(int) {
+#ifndef WIN32
+static void HandleSIGTERM(int) {
     fRequestShutdown = true;
 }
 
@@ -357,6 +358,14 @@ void HandleSIGHUP(int) {
     fReopenDebugLog = true;
     fReopenElysiumLog = true;
 }
+#else
+static BOOL WINAPI consoleCtrlHandler(DWORD dwCtrlType)
+{
+    fRequestShutdown = true;
+    Sleep(INFINITE);
+    return true;
+}
+#endif
 
 bool static Bind(const CService &addr, unsigned int flags) {
     if (!(flags & BF_EXPLICIT) && IsLimited(addr))
@@ -1207,6 +1216,8 @@ bool AppInit2(boost::thread_group &threadGroup, CScheduler &scheduler) {
 
     // Ignore SIGPIPE, otherwise it will bring the daemon down if the client closes unexpectedly
     signal(SIGPIPE, SIG_IGN);
+#else
+    SetConsoleCtrlHandler(consoleCtrlHandler, true);
 #endif
 
     // ********************************************************* Step 2: parameter interactions
